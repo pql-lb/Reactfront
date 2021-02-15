@@ -23,17 +23,17 @@ class App extends React.Component {
           window.FB.AppEvents.logPageView();
           window.FB.getLoginStatus(function(response) {
             //this.statusChangeCallback(response)
-            console.log(statusChangeCallback, window.statusChangeCallback, window.this)
+            console.log(this)
           });
           // window.fbAsyncInit()
- 
+          statusChangeCallback(response) {
+            console.log(response)
+            if (response.status === 'not_authorized' || response.status === 'unknown') {
+            }
+          }
         }
   }
-  statusChangeCallback(response) {
-    console.log(response)
-    if (response.status === 'not_authorized' || response.status === 'unknown') {
-    }
-  }
+
   componentDidMount() {
     this.loadFbApi()
   }
