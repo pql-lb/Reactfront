@@ -11,6 +11,16 @@ class App extends React.Component {
             fjs.parentNode.insertBefore(js, fjs);
             console.log('fb sdk loaded')
         }(document, 'script', 'facebook-jssdk'));
+
+        const statusChangeCallback = (response) => {
+          console.log(response)
+          const {status} = response
+          if (status === 'not_authorized' || status === 'unknown') {
+            window.FB.login()
+            console.log(window.FB)
+          }
+        }
+
         window.fbAsyncInit = function() {
           let FB_APP_ID = 1796391010517069;
           window.FB.init({
@@ -22,15 +32,10 @@ class App extends React.Component {
           })
           window.FB.AppEvents.logPageView();
           window.FB.getLoginStatus(function(response) {
-            //this.statusChangeCallback(response)
-            console.log(this)
+            statusChangeCallback(response)
           });
           // window.fbAsyncInit()
-          const statusChangeCallback = (response) => {
-            console.log(response)
-            if (response.status === 'not_authorized' || response.status === 'unknown') {
-            }
-          }
+          
         }
   }
 
