@@ -56,7 +56,7 @@ class FbLogin extends React.Component {
             <React.Fragment>
                 <div id="fb-root">
                   <div 
-                  data-onlogin={this.handleClick}
+                  onlogin={this.handleClick}
                   className="fb-login-button" 
                   data-width="300" 
                   data-size="large" 
