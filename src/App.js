@@ -26,7 +26,7 @@ class App extends React.Component {
             console.log(this)
           });
           // window.fbAsyncInit()
-          statusChangeCallback(response) {
+          const statusChangeCallback = (response) => {
             console.log(response)
             if (response.status === 'not_authorized' || response.status === 'unknown') {
             }
