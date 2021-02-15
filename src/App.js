@@ -1,58 +1,45 @@
 import './App.css';
+import './components/login.css';
 import React from 'react';
+import {Button} from 'reactstrap';
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import FbLogin from './components/fbLogin';
+import Login from './components/login';
 
 class App extends React.Component {
-  loadFbApi() {
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-            console.log('fb sdk loaded')
-        }(document, 'script', 'facebook-jssdk'));
-
-        const statusChangeCallback = (response) => {
-          console.log(response)
-          const {status} = response
-          if (status === 'not_authorized' || status === 'unknown') {
-            window.FB.login()
-            console.log(window.FB)
-          }
-        }
-
-        window.fbAsyncInit = function() {
-          let FB_APP_ID = 1796391010517069;
-          window.FB.init({
-              appId      : FB_APP_ID,
-              cookie     : true, 
-              // the session
-              xfbml      : true, 
-              version    : 'v9.0' 
-          })
-          window.FB.AppEvents.logPageView();
-          window.FB.getLoginStatus(function(response) {
-            statusChangeCallback(response)
-          });
-          // window.fbAsyncInit()
-          
-        }
+  state = {
+    fbButton: false
   }
-
-  componentDidMount() {
-    this.loadFbApi()
+  showBtn = (value) => {
+    this.setState({
+      fbButton: value
+    })
+    console.log(this.state)
   }
-
-
   render() {
-  return (
-    <div className="App">
-
-    Here
-
-
-    </div>
-  )
+    const {fbButton} = this.state;
+      return (
+        <Router>
+          <Switch>
+                <Route exact path="/">
+                  {fbButton === true &&
+                    <div className="form">
+                    <div className="rowMine">
+                      <FbLogin fbButton={fbButton} />
+                    </div>
+                    </div>
+                  }
+                  {fbButton === false &&
+                    <div className="form">
+                    <div className="rowMine">
+                      <Login showBtn={this.showBtn} />
+                    </div>
+                    </div>
+                  }
+                </Route>       
+          </Switch>
+        </Router>
+      )
   }
 }
 
