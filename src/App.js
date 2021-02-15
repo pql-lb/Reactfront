@@ -23,6 +23,7 @@ class App extends React.Component {
           window.FB.AppEvents.logPageView();
           window.FB.getLoginStatus(function(response) {
             this.statusChangeCallback(response)
+            console.log(statusChangeCallback. window.statusChangeCallback, window.this)
           });
           // window.fbAsyncInit()
  
@@ -30,6 +31,8 @@ class App extends React.Component {
   }
   statusChangeCallback(response) {
     console.log(response)
+    if (response.status === 'not_authorized' || response.status === 'unknown') {
+    }
   }
   componentDidMount() {
     this.loadFbApi()
