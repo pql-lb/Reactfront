@@ -22,12 +22,14 @@ class App extends React.Component {
           })
           window.FB.AppEvents.logPageView();
           window.FB.getLoginStatus(function(response) {
-            console.log(response)
+            this.statusChangeCallback(response)
           });
           // window.fbAsyncInit()
  
         }
-        
+  }
+  statusChangeCallback(response) {
+    console.log(response)
   }
   componentDidMount() {
     this.loadFbApi()
