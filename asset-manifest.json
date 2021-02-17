@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Reactfront/static/css/main.d5a39920.chunk.css",
-    "main.js": "/Reactfront/static/js/main.fc3fb077.chunk.js",
-    "main.js.map": "/Reactfront/static/js/main.fc3fb077.chunk.js.map",
+    "main.css": "/Reactfront/static/css/main.249d88cf.chunk.css",
+    "main.js": "/Reactfront/static/js/main.34666ff7.chunk.js",
+    "main.js.map": "/Reactfront/static/js/main.34666ff7.chunk.js.map",
     "runtime-main.js": "/Reactfront/static/js/runtime-main.09d7f5d9.js",
     "runtime-main.js.map": "/Reactfront/static/js/runtime-main.09d7f5d9.js.map",
     "static/js/2.ac4feb91.chunk.js": "/Reactfront/static/js/2.ac4feb91.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.6903566b.chunk.js": "/Reactfront/static/js/3.6903566b.chunk.js",
     "static/js/3.6903566b.chunk.js.map": "/Reactfront/static/js/3.6903566b.chunk.js.map",
     "index.html": "/Reactfront/index.html",
-    "static/css/main.d5a39920.chunk.css.map": "/Reactfront/static/css/main.d5a39920.chunk.css.map",
+    "static/css/main.249d88cf.chunk.css.map": "/Reactfront/static/css/main.249d88cf.chunk.css.map",
     "static/js/2.ac4feb91.chunk.js.LICENSE.txt": "/Reactfront/static/js/2.ac4feb91.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.09d7f5d9.js",
     "static/js/2.ac4feb91.chunk.js",
-    "static/css/main.d5a39920.chunk.css",
-    "static/js/main.fc3fb077.chunk.js"
+    "static/css/main.249d88cf.chunk.css",
+    "static/js/main.34666ff7.chunk.js"
   ]
 }
